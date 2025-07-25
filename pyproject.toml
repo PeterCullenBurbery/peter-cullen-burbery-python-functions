@@ -1,6 +1,6 @@
 [project]
 name = "peter_cullen_burbery_python_functions"
-version = "0.3.0"
+version = "0.3.1"
 description = "Utility functions by Peter Cullen Burbery, including date_time_stamp and compare_images"
 readme = "README.md"
 requires-python = ">=3.9"
