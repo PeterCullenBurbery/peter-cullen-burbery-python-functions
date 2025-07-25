@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.1] - 2025-07-25
+
+### Documentation
+- Updated `README.md`.
+
 ## [0.3.0] - 2025-07-25
+
 ### Added
 - Introduced `image_functions` subpackage
 - Added `compare_images()` function with:
