@@ -140,3 +140,19 @@ def validate_Windows_filename_with_reasons(name: str) -> dict:
                 {"character": c, "reason": r} for c, r in invalids
             ]
         }
+    
+def valid_Windows_filename(name: str) -> bool:
+    """
+    Checks whether a given filename is valid according to Windows naming rules.
+
+    This function is a simplified wrapper around `validate_Windows_filename_with_reasons`
+    that returns only a boolean indicating validity.
+
+    Args:
+        name (str): The filename to check.
+
+    Returns:
+        bool: True if the filename is valid, False otherwise.
+    """
+    result = validate_Windows_filename_with_reasons(name)
+    return result["valid"]
