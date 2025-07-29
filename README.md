@@ -50,6 +50,20 @@ Outputs:
   # Output: https://github.com/user/repo/raw/main/script.ps1
   ```
 
+- `validate_Windows_filename_with_reasons(name: str)`
+
+  Validates a Windows filename against Microsoft’s rules for illegal characters and reserved names.  
+  Returns detailed reasons for each violation.
+
+  Example:
+  ```python
+  from peter_cullen_burbery_python_functions.system_management_functions import validate_Windows_filename_with_reasons
+
+  result = validate_Windows_filename_with_reasons("CON.txt")
+  print(result)
+  # Output: {'valid': False, 'problems': [{'character': 'CON', 'reason': 'Reserved device name (console)'}]}
+  ```
+
 ---
 
 ## 📦 Installation
@@ -63,13 +77,19 @@ pip install peter-cullen-burbery-python-functions
 ```python
 from peter_cullen_burbery_python_functions.date_time_functions import date_time_stamp
 from peter_cullen_burbery_python_functions.image_functions import compare_images
-from peter_cullen_burbery_python_functions.system_management_functions import convert_blob_to_raw_github_url
+from peter_cullen_burbery_python_functions.system_management_functions import (
+    convert_blob_to_raw_github_url,
+    validate_Windows_filename_with_reasons
+)
 
 print("🕒 Timestamp:", date_time_stamp())
 compare_images("image1.png", "image2.png")
 
 url = "https://github.com/user/repo/blob/main/example.txt"
 print("🔗 Raw URL:", convert_blob_to_raw_github_url(url))
+
+filename = "COM1.txt"
+print("📁 Validity:", validate_Windows_filename_with_reasons(filename))
 ```
 
 ---
