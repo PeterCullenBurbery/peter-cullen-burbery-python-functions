@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] - 2025-07-28
+
+### Added
+- Added `validate_Windows_filename_with_reasons()` to `system_management_functions` subpackage  
+  - Validates Windows filenames using a GitHub-hosted JSON schema  
+  - Returns structured reasons for invalid characters, reserved names, and trailing space/dot
+
 ## [0.4.0] - 2025-07-28
 
 ### Added
