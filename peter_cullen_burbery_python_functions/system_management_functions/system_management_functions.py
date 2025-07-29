@@ -1,5 +1,5 @@
-import json
-import urllib.request
+import time
+import requests
 
 def convert_blob_to_raw_github_url(blob_url: str) -> str:
     """
@@ -29,24 +29,39 @@ def convert_blob_to_raw_github_url(blob_url: str) -> str:
 
 def validate_Windows_filename_with_reasons(name: str) -> dict:
     """
-    Validates a Windows filename against disallowed characters, reserved names, and naming rules.
-    
-    Uses an external JSON file hosted on GitHub that defines:
-    - Disallowed characters and their groups
-    - Reserved device names
-    - Rules about trailing spaces or periods
-    
+    Validates a Windows filename against Microsoft's file naming restrictions.
+
+    The validation uses a JSON ruleset hosted on GitHub, which defines:
+    - Disallowed characters and their classification into character groups
+    - Reserved device names (e.g., CON, NUL, COM1)
+    - Forbidden trailing characters (space and period)
+
+    The JSON is retrieved via HTTP with up to 100 retries using the `requests` library.
+
     Args:
-        name (str): The filename to validate.
-    
+        name (str): The filename to validate (can include extension, e.g., "nul.txt").
+
     Returns:
-        dict: {
-            "valid": True
-        } if valid,
-        or {
-            "valid": False,
-            "problems": [{"character": str, "reason": str}, ...]
-        }
+        dict: A dictionary describing the validation result:
+            If the filename is valid:
+                {
+                    "valid": True
+                }
+            If the filename is invalid:
+                {
+                    "valid": False,
+                    "problems": [
+                        {
+                            "character": "<offending character or name>",
+                            "reason": "<explanation of the problem>"
+                        },
+                        ...
+                    ]
+                }
+
+    Raises:
+        RuntimeError: If the GitHub-hosted rules file cannot be retrieved after 100 attempts.
+        ValueError: If the GitHub blob URL is malformed.
     """
     # GitHub blob URL containing the JSON rules
     blob_url = (
@@ -57,9 +72,19 @@ def validate_Windows_filename_with_reasons(name: str) -> dict:
     # Convert to raw content URL
     raw_url = convert_blob_to_raw_github_url(blob_url)
 
-    # Load JSON rules from GitHub
-    with urllib.request.urlopen(raw_url) as response:
-        data = json.load(response)
+    # Attempt to download the JSON with retry logic
+    for attempt in range(1, 101):
+        try:
+            response = requests.get(raw_url, timeout=10)
+            if response.status_code == 200:
+                data = response.json()
+                break
+            else:
+                raise requests.HTTPError(f"Status code {response.status_code}")
+        except Exception as e:
+            if attempt == 100:
+                raise RuntimeError(f"❌ Failed to load JSON after 100 attempts: {e}")
+            time.sleep(0.5)
 
     # Build lookup tables
     char_id_to_char = {entry["id"]: entry["char"] for entry in data["table_of_characters"]}
