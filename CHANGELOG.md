@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2025-07-28
+
+### Added
+- Added `convert_blob_to_raw_github_url()` to `system_management_functions` subpackage
+  - Transforms GitHub blob URLs to raw URLs
+
 ## [0.3.1] - 2025-07-25
 
 ### Documentation
