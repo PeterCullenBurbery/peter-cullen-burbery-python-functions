@@ -1,7 +1,7 @@
 [project]
 name = "peter_cullen_burbery_python_functions"
-version = "0.3.1"
-description = "Utility functions by Peter Cullen Burbery, including date_time_stamp and compare_images"
+version = "0.4.0"
+description = "Utility functions by Peter Cullen Burbery, including date_time_stamp, compare_images, and convert_blob_to_raw_github_url"
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
