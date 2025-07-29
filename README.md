@@ -1,6 +1,6 @@
 # peter_cullen_burbery_python_functions
 
-A small utility package by Peter Cullen Burbery that provides high-precision date/time formatting functions and image comparison tools.
+A utility package by Peter Cullen Burbery offering high-precision date/time formatting, image comparison tools, and system management helpers.
 
 ## ✨ Features
 
@@ -21,7 +21,8 @@ Example:
 ---
 
 ### 🖼️ `image_functions`
-- `compare_images(image_path_1, image_path_2)`  
+- `compare_images(image_path_1, image_path_2)`
+
   Compares two images using:
   - 🔐 SHA-256 hash
   - 🧮 Pixel-wise difference via `ImageChops`
@@ -32,6 +33,22 @@ Outputs:
 - Matching/difference status
 - SSIM score
 - Optional diff image (if images differ)
+
+---
+
+### 🛠️ `system_management_functions`
+- `convert_blob_to_raw_github_url(blob_url: str)`
+
+  Converts a GitHub `blob` URL to a `raw` content URL.
+
+  Example:
+  ```python
+  from peter_cullen_burbery_python_functions.system_management_functions import convert_blob_to_raw_github_url
+
+  raw_url = convert_blob_to_raw_github_url("https://github.com/user/repo/blob/main/script.ps1")
+  print(raw_url)
+  # Output: https://github.com/user/repo/raw/main/script.ps1
+  ```
 
 ---
 
@@ -46,9 +63,13 @@ pip install peter-cullen-burbery-python-functions
 ```python
 from peter_cullen_burbery_python_functions.date_time_functions import date_time_stamp
 from peter_cullen_burbery_python_functions.image_functions import compare_images
+from peter_cullen_burbery_python_functions.system_management_functions import convert_blob_to_raw_github_url
 
 print("🕒 Timestamp:", date_time_stamp())
 compare_images("image1.png", "image2.png")
+
+url = "https://github.com/user/repo/blob/main/example.txt"
+print("🔗 Raw URL:", convert_blob_to_raw_github_url(url))
 ```
 
 ---
