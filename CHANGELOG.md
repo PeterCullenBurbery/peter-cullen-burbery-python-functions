@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.2] - 2025-07-30
+
+### Documents
+
+- Too specific image_functions fixed.
+
 ## [0.9.1] - 2025-07-30
 
 ### Documents

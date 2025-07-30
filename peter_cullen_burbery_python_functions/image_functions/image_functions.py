@@ -1,5 +1,5 @@
 """
-Image comparison utilities.
+Image functions/utilities.
 """
 
 import os
