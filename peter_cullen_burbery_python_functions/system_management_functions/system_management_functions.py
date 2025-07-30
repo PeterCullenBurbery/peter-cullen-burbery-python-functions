@@ -1,5 +1,8 @@
 import time
 import requests
+import os
+from pathlib import Path
+from typing import Union
 
 def convert_blob_to_raw_github_url(blob_url: str) -> str:
     """
@@ -156,3 +159,49 @@ def valid_Windows_filename(name: str) -> bool:
     """
     result = validate_Windows_filename_with_reasons(name)
     return result["valid"]
+
+def get_file_size(path: Union[str, Path]) -> int:
+    """
+    Returns the size in bytes of a file or directory.
+    Accepts either a string path or a Path object.
+    """
+    path = Path(path)  # Normalize to Path object
+
+    if not path.exists():
+        raise FileNotFoundError(f"Path '{path}' does not exist.")
+
+    if path.is_file():
+        return path.stat().st_size
+
+    total_size = 0
+    for file in path.rglob("*"):
+        if file.is_file():
+            try:
+                total_size += file.stat().st_size
+            except OSError:
+                pass  # Skip unreadable files
+    return total_size
+
+def get_file_size_human_readable(path: Union[str, Path]) -> str:
+    """
+    Returns the size of the file or directory in a human-readable format.
+    Supports units: bytes, KB, MB, GB, TB (3 decimal places).
+    Accepts str or Path input.
+    """
+    size = get_file_size(path)
+
+    KB = 1024
+    MB = KB * 1024
+    GB = MB * 1024
+    TB = GB * 1024
+
+    if size >= TB:
+        return f"{size / TB:.3f} TB"
+    elif size >= GB:
+        return f"{size / GB:.3f} GB"
+    elif size >= MB:
+        return f"{size / MB:.3f} MB"
+    elif size >= KB:
+        return f"{size / KB:.3f} KB"
+    else:
+        return f"{size} bytes"
