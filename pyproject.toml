@@ -1,7 +1,7 @@
 [project]
 
 name = "peter_cullen_burbery_python_functions"
-version = "0.7.6"
+version = "0.7.7"
 description = "Utility functions by Peter Cullen Burbery, including date_time_stamp, compare_images, convert_blob_to_raw_github_url, validate_Windows_filename_with_reasons, and valid_Windows_filename"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -24,3 +24,8 @@ dependencies = [
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/PeterCullenBurbery/peter-cullen-burbery-python-functions"
+Documentation = "https://peter-cullen-burbery-python-functions.readthedocs.io"
+Source = "https://github.com/PeterCullenBurbery/peter-cullen-burbery-python-functions"

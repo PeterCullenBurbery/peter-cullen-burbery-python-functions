@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.7] - 2025-07-30
+
+### Documentation
+
+- Added `Documentation` link to PyPI sidebar via `[project.urls]` in `pyproject.toml`
+  - Now links to: https://peter-cullen-burbery-python-functions.readthedocs.io
+
+- Verified sidebar links on PyPI:
+  - Homepage → GitHub repo
+  - Documentation → Read the Docs
+  - Source → GitHub repo
+
 ## [0.7.6] - 2025-07-30
 
 ### Documentation
