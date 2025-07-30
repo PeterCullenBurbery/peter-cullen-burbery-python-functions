@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.1] - 2025-07-30
+
+### Documents
+
+- Fixed date_time_functions/image_functions/system_management_functions to use simpler module comments.
+
 ## [0.9.0] - 2025-07-30
 
 ### Documentation

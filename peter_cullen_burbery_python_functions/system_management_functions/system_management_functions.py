@@ -1,12 +1,5 @@
 """
 System management utilities.
-
-Includes:
-- GitHub URL conversion: Convert blob URLs to raw content.
-- Filename validation: Check Windows filenames against reserved names and forbidden characters.
-- File size utilities: Get size in bytes or human-readable format for files and directories.
-
-Dependencies: requests
 """
 
 import time

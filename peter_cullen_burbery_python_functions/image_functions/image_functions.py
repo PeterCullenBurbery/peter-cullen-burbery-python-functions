@@ -1,11 +1,5 @@
 """
 Image comparison utilities.
-
-Includes:
-- sha256_hash(filepath): SHA-256 hash of a file.
-- compare_images(img1, img2): Compares two images using hash, pixel diff, SSIM, and optional ImageMagick.
-
-Dependencies: Pillow, OpenCV, scikit-image, ImageMagick (optional).
 """
 
 import os
