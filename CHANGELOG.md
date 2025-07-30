@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.4] - 2025-07-30
+
+### Fixed
+
+- Updated `.readthedocs.yml` to include required `build.tools` field
+  - Explicitly set Python version to `"3.13"` for compatibility with Read the Docs V2 config
+  - "ubuntu-24.04" was valid.
+
 ## [0.7.3] - 2025-07-30
 
 ### Fixed
