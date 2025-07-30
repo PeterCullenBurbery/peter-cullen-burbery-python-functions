@@ -1,5 +1,8 @@
 version: 2
 
+build:
+  os: ubuntu-lts-latest
+
 sphinx:
   configuration: docs/source/conf.py
 
