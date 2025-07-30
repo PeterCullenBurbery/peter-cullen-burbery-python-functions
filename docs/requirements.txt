@@ -1,0 +1,7 @@
+sphinx
+tzlocal
+Pillow
+opencv-python
+scikit-image
+sphinx_rtd_theme
+requests

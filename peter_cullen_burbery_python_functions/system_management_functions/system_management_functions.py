@@ -34,23 +34,23 @@ def validate_Windows_filename_with_reasons(name: str) -> dict:
     """
     Validates a Windows filename against Microsoft's file naming restrictions.
 
-    The validation uses a JSON ruleset hosted on GitHub, which defines:
-    - Disallowed characters and their classification into character groups
+    This function uses a JSON ruleset hosted on GitHub that defines:
+    - Disallowed characters grouped by category
     - Reserved device names (e.g., CON, NUL, COM1)
-    - Forbidden trailing characters (space and period)
+    - Forbidden trailing characters (space or period)
 
-    The JSON is retrieved via HTTP with up to 100 retries using the `requests` library.
+    The JSON rules are retrieved via HTTP with up to 100 retries using the `requests` library.
 
     Args:
-        name (str): The filename to validate (can include extension, e.g., "nul.txt").
+        name (str): The filename to validate (e.g., "nul.txt").
 
     Returns:
-        dict: A dictionary describing the validation result:
-            If the filename is valid:
+        dict: A dictionary indicating whether the filename is valid.
+            If valid:
                 {
                     "valid": True
                 }
-            If the filename is invalid:
+            If invalid:
                 {
                     "valid": False,
                     "problems": [
@@ -63,7 +63,7 @@ def validate_Windows_filename_with_reasons(name: str) -> dict:
                 }
 
     Raises:
-        RuntimeError: If the GitHub-hosted rules file cannot be retrieved after 100 attempts.
+        RuntimeError: If the rules file cannot be retrieved after 100 attempts.
         ValueError: If the GitHub blob URL is malformed.
     """
     # GitHub blob URL containing the JSON rules
@@ -143,7 +143,7 @@ def validate_Windows_filename_with_reasons(name: str) -> dict:
                 {"character": c, "reason": r} for c, r in invalids
             ]
         }
-    
+
 def valid_Windows_filename(name: str) -> bool:
     """
     Checks whether a given filename is valid according to Windows naming rules.
