@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.0] - 2025-07-30
+
+### Added
+
+- Complete docstring for `date_time_stamp()` function, including:
+  - Precise return format
+  - Example usage
+  - Explanation of all calendar components (Gregorian, ISO, ordinal)
+
+- Module-level docstring for `date_time_functions.py`
+
+### Improved
+
+- Code clarity: used more explicit variable names like `local_timezone`
+- Return formatting consistency using f-strings
+- Enhanced maintainability with grouped logic and multiline return
+
 ## [0.7.7] - 2025-07-30
 
 ### Documentation
