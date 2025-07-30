@@ -1,5 +1,7 @@
 """
-Date/time utility functions for high-precision local timestamps.
+High-precision timestamp utilities.
+
+Includes local time, nanoseconds, IANA timezone, ISO week, and day-of-year info.
 """
 
 from datetime import datetime

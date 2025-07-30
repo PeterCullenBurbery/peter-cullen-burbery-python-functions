@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] - 2025-07-30
+
+### Documentation
+
+- Added module-level docstring to `image_functions.py`:
+  - Summarizes image comparison functionality
+  - Lists all comparison techniques used (SHA-256, ImageChops, SSIM, ImageMagick)
+  - Describes function responsibilities and external tool requirements
+
+- Added module-level docstring to `system_management_functions.py`:
+  - Describes utilities provided: GitHub URL conversion, Windows filename validation, file size analysis
+  - Lists external dependency: `requests`
+
+### Improved
+
+- Streamlined all module-level docstrings to be concise and readable
+- Aligned function summaries and terminology across modules for consistency
+
 ## [0.8.0] - 2025-07-30
 
 ### Added
