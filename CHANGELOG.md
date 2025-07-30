@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.5] - 2025-07-30
+
+### Fixed
+
+- Switched to using `build.jobs` in `.readthedocs.yml` for more structured control over build steps
+  - Split install and build phases explicitly
+  - Used `sphinx-build` to generate HTML into `$READTHEDOCS_OUTPUT/html`
+- Kept `build.tools` field with `python: "3.13"` for clarity and reproducibility
+- Retained `sphinx.configuration` key pointing to `docs/source/conf.py`
+
 ## [0.7.4] - 2025-07-30
 
 ### Fixed
