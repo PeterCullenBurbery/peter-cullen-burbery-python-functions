@@ -5,7 +5,9 @@ A utility package by Peter Cullen Burbery offering high-precision date/time form
 ## ✨ Features
 
 ### 📅 `date_time_functions`
-- `date_time_stamp()`  
+
+- `date_time_stamp()`
+
   Returns a precise timestamp string including:
   - Gregorian calendar date
   - Time with nanosecond precision
@@ -21,6 +23,7 @@ Example:
 ---
 
 ### 🖼️ `image_functions`
+
 - `compare_images(image_path_1, image_path_2)`
 
   Compares two images using:
@@ -37,6 +40,7 @@ Outputs:
 ---
 
 ### 🛠️ `system_management_functions`
+
 - `convert_blob_to_raw_github_url(blob_url: str)`
 
   Converts a GitHub `blob` URL to a `raw` content URL.
@@ -52,8 +56,9 @@ Outputs:
 
 - `validate_Windows_filename_with_reasons(name: str)`
 
-  Validates a Windows filename against Microsoft’s rules for illegal characters and reserved names.  
-  Returns detailed reasons for each violation.
+  Validates a Windows filename against Microsoft’s rules for illegal characters, reserved device names, and invalid trailing characters.
+
+  Returns a dictionary indicating whether the filename is valid, and if not, why.
 
   Example:
   ```python
@@ -61,7 +66,21 @@ Outputs:
 
   result = validate_Windows_filename_with_reasons("CON.txt")
   print(result)
-  # Output: {'valid': False, 'problems': [{'character': 'CON', 'reason': 'Reserved device name (console)'}]}
+  # Output: {'valid': False, 'problems': [{'character': 'CON', 'reason': 'Reserved device name: console'}]}
+  ```
+
+- `valid_Windows_filename(name: str)`
+
+  Lightweight check to determine whether a Windows filename is valid.
+
+  Returns a simple boolean (`True` or `False`) based on the same rules used in `validate_Windows_filename_with_reasons()`.
+
+  Example:
+  ```python
+  from peter_cullen_burbery_python_functions.system_management_functions import valid_Windows_filename
+
+  print(valid_Windows_filename("normal_file.txt"))  # True
+  print(valid_Windows_filename("NUL.txt"))          # False
   ```
 
 ---
@@ -79,7 +98,8 @@ from peter_cullen_burbery_python_functions.date_time_functions import date_time_
 from peter_cullen_burbery_python_functions.image_functions import compare_images
 from peter_cullen_burbery_python_functions.system_management_functions import (
     convert_blob_to_raw_github_url,
-    validate_Windows_filename_with_reasons
+    validate_Windows_filename_with_reasons,
+    valid_Windows_filename,
 )
 
 print("🕒 Timestamp:", date_time_stamp())
@@ -89,7 +109,8 @@ url = "https://github.com/user/repo/blob/main/example.txt"
 print("🔗 Raw URL:", convert_blob_to_raw_github_url(url))
 
 filename = "COM1.txt"
-print("📁 Validity:", validate_Windows_filename_with_reasons(filename))
+print("📁 Validity with reasons:", validate_Windows_filename_with_reasons(filename))
+print("✅ Is valid?", valid_Windows_filename(filename))
 ```
 
 ---
