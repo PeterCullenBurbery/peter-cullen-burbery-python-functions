@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.1] - 2025-07-29
+
+### Fixed
+
+- Exposed `valid_Windows_filename()` at the top-level package interface via `__init__.py`
+  - You can now import it directly from `peter_cullen_burbery_python_functions.system_management_functions`
+
 ## [0.6.0] - 2025-07-29
 
 ### Added
