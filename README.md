@@ -2,6 +2,8 @@
 
 A utility package by Peter Cullen Burbery offering high-precision date/time formatting, image comparison tools, and system management helpers.
 
+📚 Documentation: [Read the Docs](https://peter-cullen-burbery-python-functions.readthedocs.io/) *(auto-generated via Sphinx)*
+
 ## ✨ Features
 
 ### 📅 `date_time_functions`
@@ -112,6 +114,21 @@ filename = "COM1.txt"
 print("📁 Validity with reasons:", validate_Windows_filename_with_reasons(filename))
 print("✅ Is valid?", valid_Windows_filename(filename))
 ```
+
+---
+
+## 📘 Documentation
+
+This package uses [Sphinx](https://www.sphinx-doc.org/) and the [sphinx_rtd_theme](https://sphinx-rtd-theme.readthedocs.io/) to build documentation.
+
+To build docs locally:
+
+```bash
+cd docs
+make html
+```
+
+The output will be in `docs/build/html`.
 
 ---
 

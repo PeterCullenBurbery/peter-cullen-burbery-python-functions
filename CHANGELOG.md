@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.0] - 2025-07-30
+
+### Documentation
+
+- Integrated with **Read the Docs** for automatic documentation hosting
+- Added `.readthedocs.yml` configuration file
+- Connected repository using **GitHub OAuth**
+- Configured **Sphinx** with the `sphinx_rtd_theme`
+- Publicly hosted API reference and source documentation on Read the Docs
+
 ## [0.6.1] - 2025-07-29
 
 ### Fixed
