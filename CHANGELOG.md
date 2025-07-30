@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2025-07-30
+
+### Changed
+
+- validate_Windows_filename_with_reasons now accepts Union[str, Path] instead of str.
+- valid_Windows_filename now accepts Union[str, Path] instead of str.
+
+### Documentation
+
+- Updated docstrings for validate_Windows_filename_with_reasons and valid_Windows_filename
+  to reflect support for pathlib.Path input.
+
 ## [0.9.2] - 2025-07-30
 
 ### Documents

@@ -34,7 +34,7 @@ def convert_blob_to_raw_github_url(blob_url: str) -> str:
 
     return blob_url.replace(blob_segment, raw_segment, 1)
 
-def validate_Windows_filename_with_reasons(name: str) -> dict:
+def validate_Windows_filename_with_reasons(name: Union[str, Path]) -> dict:
     """
     Validates a Windows filename against Microsoft's file naming restrictions.
 
@@ -46,7 +46,7 @@ def validate_Windows_filename_with_reasons(name: str) -> dict:
     The JSON rules are retrieved via HTTP with up to 100 retries using the `requests` library.
 
     Args:
-        name (str): The filename to validate (e.g., "nul.txt").
+        name (str or Path): The filename to validate (e.g., "nul.txt").
 
     Returns:
         dict: A dictionary indicating whether the filename is valid.
@@ -70,6 +70,9 @@ def validate_Windows_filename_with_reasons(name: str) -> dict:
         RuntimeError: If the rules file cannot be retrieved after 100 attempts.
         ValueError: If the GitHub blob URL is malformed.
     """
+    # Normalize to string in case name is a Path object
+    name = str(name)
+
     # GitHub blob URL containing the JSON rules
     blob_url = (
         "https://github.com/PeterCullenBurbery/windows-file-name-rules/blob/main/"
@@ -143,12 +146,10 @@ def validate_Windows_filename_with_reasons(name: str) -> dict:
     else:
         return {
             "valid": False,
-            "problems": [
-                {"character": c, "reason": r} for c, r in invalids
-            ]
+            "problems": [{"character": c, "reason": r} for c, r in invalids]
         }
 
-def valid_Windows_filename(name: str) -> bool:
+def valid_Windows_filename(name: Union[str, Path]) -> bool:
     """
     Checks whether a given filename is valid according to Windows naming rules.
 
@@ -156,7 +157,7 @@ def valid_Windows_filename(name: str) -> bool:
     that returns only a boolean indicating validity.
 
     Args:
-        name (str): The filename to check.
+        name (str or Path): The filename to check.
 
     Returns:
         bool: True if the filename is valid, False otherwise.
