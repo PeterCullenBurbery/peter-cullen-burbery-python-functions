@@ -10,9 +10,13 @@ Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 documentation for details.
 
+Welcome to the documentation!
+
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   modules
+   date_time_functions
+   image_functions
+   system_management_functions

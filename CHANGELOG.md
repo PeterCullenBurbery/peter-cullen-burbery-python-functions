@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.6] - 2025-07-30
+
+### Documentation
+
+- Split Sphinx documentation into dedicated sections:
+  - `date_time_functions`
+  - `image_functions`
+  - `system_management_functions`
+
+- Updated `index.rst` to organize documentation by module
+
+- Created individual `.rst` files for each module, using `.. automodule::` for clear and structured API references
+
+- Improved sidebar and navigation structure on Read the Docs
+
 ## [0.7.5] - 2025-07-30
 
 ### Fixed
