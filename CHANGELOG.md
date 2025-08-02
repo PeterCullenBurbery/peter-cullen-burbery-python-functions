@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2025-008-002 008.030.055.163275400 America/New_York 2025-W031-006 2025-214
+
+## 📦 Release Notes – `date_time_stamp` v1.5.0
+
+**Release Date:** August 2, 2025  
+**Version:** 1.5.0  
+**Type:** Feature & Precision Upgrade
+
+---
+
+### 🚀 New Features & Enhancements
+
+- **True Nanosecond Precision Implemented**
+  - Switched to `time.time_ns()` to capture the **actual system nanoseconds** since the Unix epoch.
+  - Ensures **accurate sub-second precision** instead of estimated nanoseconds (previously derived from `microsecond * 1000`).
+
+- **High-Fidelity Time Construction**
+  - Time is now constructed from the **exact nanosecond timestamp**, ensuring **synchronized precision** between date and time components.
+
+---
+
+### 📚 Example Output
+```text
+2025-008-002 018.049.021.123456789 America/New_York 2025-W032-006 2025-214
+```
+
+**Format:**
+```
+YYYY-MMM-DDD HHH.MMM.SSS.NNNNNNNNN TZ_NAME YYYY-Www-ddd YYYY-DDD
+```
+
+---
+
+### 🧼 Deprecations
+- Removed simulated nanosecond logic based on `microsecond * 1000`. This was misleading and is no longer necessary.
+
+---
+
 ## [1.4.0] - 2025-008-002 007.059.016.863518400 America/New_York 2025-W031-006 2025-214
 
 - release for Python publish workflow.
