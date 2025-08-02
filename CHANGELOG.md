@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2025-008-002 006.032.020.779609400 America/New_York 2025-W031-006 2025-214
+
+- date_time_stamp type hints enabled.
+- generate_pdb_name_from_timestamp added.
+
 ## [1.0.0] - 2025-07-30
 
 ### Changed
