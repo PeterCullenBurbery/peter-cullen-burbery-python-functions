@@ -158,4 +158,4 @@ Maintained with care by Peter Cullen Burbery.
 
 If you use this module in your work, please cite the following:
 
-> Peter Cullen Burbery. (2025). Peter Cullen Burbery Python functions (v1.5.1) [Software]. Zenodo. https://doi.org/10.5281/zenodo.16727183
+> Peter Cullen Burbery. (2025). Peter Cullen Burbery Python functions (v1.5.2) [Software]. Zenodo. https://doi.org/10.5281/zenodo.16727183
