@@ -21,6 +21,8 @@ All notable changes to this project will be documented in this file.
 - **High-Fidelity Time Construction**
   - Time is now constructed from the **exact nanosecond timestamp**, ensuring **synchronized precision** between date and time components.
 
+- Note: On Windows, you will only get 7 digits of precision. "055.163275400", not "055.163275412".
+
 ---
 
 ### 📚 Example Output
