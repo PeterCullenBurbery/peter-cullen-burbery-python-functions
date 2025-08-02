@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.5.2] - 2025-008-002 008.056.016.935859000 America/New_York 2025-W031-006 2025-214
+## [1.5.2] - 2025-008-002 009.048.016.919089700 America/New_York 2025-W031-006 2025-214
 
 - date-released: removed from CITATION.cff. It's too much of a hassle. date-released: is too much of a hassle to keep up to date.
 
