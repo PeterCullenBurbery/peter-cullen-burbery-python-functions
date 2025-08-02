@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2025-008-002 007.006.054.271277800 America/New_York 2025-W031-006 2025-214
+
+- Added Zenodo information to including, but not limited to, CITATION.cff, and README.md.
+
 ## [1.2.0] - 2025-008-002 006.055.056.016237200 America/New_York 2025-W031-006 2025-214
 
 - release for Zenodo.
