@@ -1,5 +1,7 @@
 # peter_cullen_burbery_python_functions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16727183.svg)](https://doi.org/10.5281/zenodo.16727183)
+
 A utility package by Peter Cullen Burbery offering high-precision date/time formatting, image comparison tools, and system management helpers.
 
 📚 Documentation: [Read the Docs](https://peter-cullen-burbery-python-functions.readthedocs.io/) *(auto-generated via Sphinx)*
@@ -137,3 +139,21 @@ The output will be in `docs/build/html`.
 **Peter Cullen Burbery**
 
 This utility library is part of a broader collection of tools for automation, data processing, and system utility scripting.
+
+---
+
+## ⚠️ Disclaimer
+
+This is a development and educational project. All code is provided in good faith and intended for system automation, productivity, and learning purposes.
+
+If you're a rights holder and want attribution changed or material removed, please contact the maintainer.
+
+---
+
+Maintained with care by Peter Cullen Burbery.
+
+## 📘 Citation
+
+If you use this module in your work, please cite the following:
+
+> Peter Cullen Burbery. (2025). Peter Cullen Burbery Python functions (v1.3.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.16727183
