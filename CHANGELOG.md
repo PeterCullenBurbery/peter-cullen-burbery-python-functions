@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2025-008-002 006.055.056.016237200 America/New_York 2025-W031-006 2025-214
+
+- release for Zenodo.
+
 ## [1.1.0] - 2025-008-002 006.032.020.779609400 America/New_York 2025-W031-006 2025-214
 
 - date_time_stamp type hints enabled.
