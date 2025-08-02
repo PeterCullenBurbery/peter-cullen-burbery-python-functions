@@ -5,7 +5,7 @@ Date/time utility functions for high-precision local timestamps.
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import tzlocal
-
+import time
 
 def date_time_stamp() -> str:
     """
@@ -22,26 +22,32 @@ def date_time_stamp() -> str:
 
     Example:
         >>> date_time_stamp()
-        '2025-007-030 016.035.051.000000000 America/New_York 2025-W031-003 2025-211'
+        '2025-007-030 016.035.051.123456789 America/New_York 2025-W031-003 2025-211'
 
     Returns:
         str: Formatted timestamp string with nanosecond precision and multiple calendar representations.
     """
+    # Get local timezone and nanoseconds since epoch
     local_timezone: ZoneInfo = tzlocal.get_localzone()
-    now: datetime = datetime.now(ZoneInfo(local_timezone.key))
+    ns_since_epoch: int = time.time_ns()
 
-    # Format components
+    # Convert nanoseconds to seconds
+    seconds_since_epoch: float = ns_since_epoch / 1_000_000_000
+    now: datetime = datetime.fromtimestamp(seconds_since_epoch, tz=ZoneInfo(local_timezone.key))
+
+    # Extract nanosecond portion
+    nanosecond_part: int = ns_since_epoch % 1_000_000_000
+
+    # Format date/time components
     date_part: str = f"{now.year}-{now.month:03d}-{now.day:03d}"  # YYYY-MMM-DDD
-    time_part: str = f"{now.hour:03d}.{now.minute:03d}.{now.second:03d}.{now.microsecond * 1000:09d}"  # HHH.MMM.SSS.NNNNNNNNN
+    time_part: str = f"{now.hour:03d}.{now.minute:03d}.{now.second:03d}.{nanosecond_part:09d}"  # HHH.MMM.SSS.NNNNNNNNN
     time_zone: str = local_timezone.key
 
-    iso_year: int
-    iso_week: int
-    iso_weekday: int
+    # ISO week
     iso_year, iso_week, iso_weekday = now.isocalendar()
     iso_week_str: str = f"{iso_week:03d}"
     iso_weekday_str: str = f"{iso_weekday:03d}"
-
+    # ISO ordinal date
     day_of_year: str = f"{now.timetuple().tm_yday:03d}"
     gregorian_year: str = str(now.year)
 
