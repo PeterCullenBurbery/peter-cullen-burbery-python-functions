@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2025-008-002 007.059.016.863518400 America/New_York 2025-W031-006 2025-214
+
+- release for Python publish workflow.
+
 ## [1.3.0] - 2025-008-002 007.006.054.271277800 America/New_York 2025-W031-006 2025-214
 
 - Added Zenodo information to including, but not limited to, CITATION.cff, and README.md.
