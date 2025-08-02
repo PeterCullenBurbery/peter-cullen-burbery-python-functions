@@ -4,6 +4,8 @@
 
 A utility package by Peter Cullen Burbery offering high-precision date/time formatting, image comparison tools, and system management helpers.
 
+[PyPi peter_cullen_burbery_python_functions](https://pypi.org/project/peter-cullen-burbery-python-functions/)
+
 📚 Documentation: [Read the Docs](https://peter-cullen-burbery-python-functions.readthedocs.io/) *(auto-generated via Sphinx)*
 
 ## ✨ Features
