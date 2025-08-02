@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.0] - 2025-008-002 012.010.041.314482100 America/New_York 2025-W031-006 2025-214
+
+- I forgot to add generate_pdb_name_from_timestamp to peter_cullen_burbery_python_functions/date_time_functions/__init__.py slash peter_cullen_burbery_python_functions/__init__.py.
+
 ## [1.5.2] - 2025-008-002 009.048.016.919089700 America/New_York 2025-W031-006 2025-214
 
 - date-released: removed from CITATION.cff. It's too much of a hassle. date-released: is too much of a hassle to keep up to date.
