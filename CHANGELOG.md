@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.1] - 2025-008-002 008.056.016.935859000 America/New_York 2025-W031-006 2025-214
+
+- README.md updated for PyPi.
+
 ## [1.5.0] - 2025-008-002 008.030.055.163275400 America/New_York 2025-W031-006 2025-214
 
 ## 📦 Release Notes – `date_time_stamp` v1.5.0
