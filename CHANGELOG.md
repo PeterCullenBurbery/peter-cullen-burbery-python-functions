@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.2] - 2025-008-004 013.000.027.124517300 America/New_York 2025-W032-001 2025-216
+
+### Updated
+
+- Updated C:\GitHub-repositories\peter-cullen-burbery-python-functions\peter_cullen_burbery_python_functions\date_time_functions\__init__.py (to import generate_prefixed_timestamp).
+
 ## [1.7.1] - 2025-008-004 012.054.010.541126800 America/New_York 2025-W032-001 2025-216
 
 ### Updated
