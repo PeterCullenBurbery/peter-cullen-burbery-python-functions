@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.2] - 2025-008-004 011.035.049.160587800 America/New_York 2025-W032-001 2025-216
+
+- version removed from README citation.
+
 ## [1.6.1] - 2025-008-004 011.030.058.059279200 America/New_York 2025-W032-001 2025-216
 
 - version field removed from CITATION.cff. It was too much hassle [to keep up to date].
