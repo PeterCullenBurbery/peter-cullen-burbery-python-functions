@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [1.7.0] - 2025-008-004 011.041.047.616246200 America/New_York 2025-W032-001 2025-216
 
-- generate_prefixed_timestamp added.
+### Added
+
+- Added generate_prefixed_timestamp.
+
+### Updated
+
+- Updated README to signal the most up-to-date documentation is read the docs.
 
 ## [1.6.2] - 2025-008-004 011.035.049.160587800 America/New_York 2025-W032-001 2025-216
 
