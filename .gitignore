@@ -4,8 +4,8 @@
 *.so
 
 # Distribution / packaging
-build/
-dist/
+**/build/
+**/dist/
 *.egg-info/
 *.egg/
 .eggs/
