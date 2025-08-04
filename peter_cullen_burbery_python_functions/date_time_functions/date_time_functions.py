@@ -83,3 +83,47 @@ def generate_pdb_name_from_timestamp() -> str:
 
     # Assemble the PDB name string
     return f"pdb_{year}_{month}_{day}_{hour}_{minute}_{second}"
+
+def generate_prefixed_timestamp(prefix: str) -> str:
+    """
+    Generates a high-precision, time zone-aware timestamp string with a given prefix.
+
+    The format returned is:
+        <prefix>_YYYY_MMM_DDD_HHH_MMM_SSS_NNNNNNNNN_TimeZone_ISOYEAR_WWWW_WEEKDAY_YYYY_DOY
+
+    Example:
+        big_data_test_2025_007_031_019_007_040_353635000_America_slash_New_York_2025_W031_004_2025_212
+
+    Args:
+        prefix (str): A string prefix such as "big_data_test" or "everyday_calculations".
+
+    Returns:
+        str: A formatted timestamp string with the given prefix.
+    """
+    local_timezone: ZoneInfo = tzlocal.get_localzone()
+    ns_since_epoch: int = time.time_ns()
+    seconds_since_epoch: float = ns_since_epoch / 1_000_000_000
+    now: datetime = datetime.fromtimestamp(seconds_since_epoch, tz=ZoneInfo(local_timezone.key))
+    nanosecond_part: int = ns_since_epoch % 1_000_000_000
+
+    # Main components
+    year: str = f"{now.year}"
+    month: str = f"{now.month:03d}"
+    day: str = f"{now.day:03d}"
+    hour: str = f"{now.hour:03d}"
+    minute: str = f"{now.minute:03d}"
+    second: str = f"{now.second:03d}"
+    nanoseconds: str = f"{nanosecond_part:09d}"
+    time_zone: str = local_timezone.key.replace("/", "_slash_")
+
+    # ISO week info
+    iso_year, iso_week, iso_weekday = now.isocalendar()
+    iso_week_str: str = f"{iso_week:03d}"
+    iso_weekday_str: str = f"{iso_weekday:03d}"
+    day_of_year: str = f"{now.timetuple().tm_yday:03d}"
+
+    return (
+        f"{prefix}_{year}_{month}_{day}_{hour}_{minute}_{second}_"
+        f"{nanoseconds}_{time_zone}_{iso_year:04d}_W{iso_week_str}_{iso_weekday_str}_"
+        f"{year}_{day_of_year}"
+    )
