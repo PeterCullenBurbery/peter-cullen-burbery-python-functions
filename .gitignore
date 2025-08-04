@@ -4,8 +4,10 @@
 *.so
 
 # Distribution / packaging
+# at any depth
 **/build/
 **/dist/
+# end of "at any depth"
 *.egg-info/
 *.egg/
 .eggs/
