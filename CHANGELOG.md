@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.1] - 2025-008-004 012.054.010.541126800 America/New_York 2025-W032-001 2025-216
+
+### Updated
+
+- Updated .gitignore
+
 ## [1.7.0] - 2025-008-004 011.049.039.492898200 America/New_York 2025-W032-001 2025-216
 
 ### Added
