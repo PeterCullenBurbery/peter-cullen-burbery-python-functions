@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.0] - 2025_008_008_020_049_034_240004800_America_slash_New_York_2025_W032_005_2025_220_1754700574_240004800
+
+### Added
+- Added `get_timestamp()` function:
+  - Returns a high-precision, timezone-aware timestamp string.
+  - Format:  
+    `YYYY_MMM_DDD_HHH_MMM_SSS_NNNNNNNNN_TimeZone_ISOYEAR_WWWW_WEEKDAY_YYYY_DOY_UnixSeconds_Nanoseconds`
+  - Uses system nanosecond precision (`time.time_ns()`) for accurate sub-second timing.
+  - Includes detailed calendar info: ISO week year, week number, weekday, ordinal day of year.
+  - Formats time zone with underscores replacing slashes (e.g., `America_slash_New_York`).
+  - Example output:  
+    `2025_008_004_013_048_029_083107000_America_slash_New_York_2025_W032_001_2025_216_1754681668_083107000`
+
 ## [1.7.3] - 2025-008-004 013.018.031.720574300 America/New_York 2025-W032-001 2025-216
 
 ### Updated
