@@ -2,5 +2,6 @@
 from .date_time_functions import (
     date_time_stamp,
     generate_pdb_name_from_timestamp,
-    generate_prefixed_timestamp
+    generate_prefixed_timestamp,
+    get_timestamp
 )
