@@ -131,15 +131,16 @@ def generate_prefixed_timestamp(prefix: str) -> str:
 def get_timestamp() -> str:
     """
     Returns a high-precision, time zone-aware timestamp string:
-    YYYY_MMM_DDD_HHH_MMM_SSS_NNNNNNNNN_TimeZone_ISOYEAR_WWWW_WEEKDAY_YYYY_DOY
+    YYYY_MMM_DDD_HHH_MMM_SSS_NNNNNNNNN_TimeZone_ISOYEAR_WWWW_WEEKDAY_YYYY_DOY_UnixSeconds_Nanoseconds
 
     Example:
-        2025_008_004_013_048_029_083107000_America_slash_New_York_2025_W032_001_2025_216
+        2025_008_004_013_048_029_083107000_America_slash_New_York_2025_W032_001_2025_216_1754681668_083107000
     """
     # Local TZ and now with nanoseconds
     local_tz: ZoneInfo = tzlocal.get_localzone()
     ns_since_epoch: int = time.time_ns()
-    seconds_since_epoch: float = ns_since_epoch / 1_000_000_000
+    seconds_since_epoch: int = ns_since_epoch // 1_000_000_000  # integer seconds
+    nanos_part: int = ns_since_epoch % 1_000_000_000
     now: datetime = datetime.fromtimestamp(seconds_since_epoch, tz=ZoneInfo(local_tz.key))
 
     # Components
@@ -149,7 +150,7 @@ def get_timestamp() -> str:
     hour: str = f"{now.hour:03d}"
     minute: str = f"{now.minute:03d}"
     second: str = f"{now.second:03d}"
-    nanoseconds: str = f"{ns_since_epoch % 1_000_000_000:09d}"
+    nanoseconds: str = f"{nanos_part:09d}"
     time_zone: str = local_tz.key.replace("/", "_slash_")
 
     # ISO week info and ordinal day
@@ -161,5 +162,5 @@ def get_timestamp() -> str:
     return (
         f"{year}_{month}_{day}_{hour}_{minute}_{second}_"
         f"{nanoseconds}_{time_zone}_{iso_year:04d}_W{iso_week_str}_{iso_weekday_str}_"
-        f"{year}_{day_of_year}"
+        f"{year}_{day_of_year}_{seconds_since_epoch}_{nanoseconds}"
     )
