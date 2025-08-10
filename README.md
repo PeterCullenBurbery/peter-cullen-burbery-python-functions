@@ -8,7 +8,7 @@ Available on PyPi at [peter_cullen_burbery_python_functions](https://pypi.org/pr
 
 📚 Documentation: [Read the Docs](https://peter-cullen-burbery-python-functions.readthedocs.io/) *(auto-generated via Sphinx)*
 
-For the most up to date docs, please visit [Read the Docs](https://peter-cullen-burbery-python-functions.readthedocs.io/).
+For the most up to date documentation, please visit [Read the Docs](https://peter-cullen-burbery-python-functions.readthedocs.io/).
 
 ## ✨ Features
 
