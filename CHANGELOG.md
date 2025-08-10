@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.1] - 2025_008_010_009_001_023_496392000_America_slash_New_York_2025_W032_007_2025_222_1754830883_496392000
+
+- Updated README to say "For the most up to date documentation, please visit [Read the Docs](https://peter-cullen-burbery-python-functions.readthedocs.io/)." instead of "For the most up to date docs, please visit [Read the Docs](https://peter-cullen-burbery-python-functions.readthedocs.io/).".
+
 ## [1.8.0] - 2025_008_008_020_049_034_240004800_America_slash_New_York_2025_W032_005_2025_220_1754700574_240004800
 
 ### Added
